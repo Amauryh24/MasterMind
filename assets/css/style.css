@@ -1,0 +1,98 @@
+body {
+  background-color: #2e2e94;
+}
+
+body .black {
+  background-color: black !important;
+}
+
+body .white {
+  background-color: white !important;
+}
+
+body .red {
+  background-color: red !important;
+}
+
+body .orange {
+  background-color: orange !important;
+}
+
+body .yellow {
+  background-color: yellow !important;
+}
+
+body .blue {
+  background-color: blue !important;
+}
+
+body .wrap-game ul#codeSoluce {
+  background-color: transparent;
+}
+
+body .wrap-game ul#board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+body .wrap-game ul#board li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .wrap-game ul#board li span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0.2em;
+  background-color: #1b1b50;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
+body .wrap-game ul#board li span:first-child {
+  background-color: transparent;
+}
+
+body .wrap-game ul#board li span:nth-child(n + 6) {
+  width: 10px;
+  height: 10px;
+}
+
+body .wrap-game ul#colorOptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .wrap-game ul#colorOptions li {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0.2em;
+  background-color: #1b1b50;
+  border-radius: 30px;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */

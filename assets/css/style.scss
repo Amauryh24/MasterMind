@@ -1,0 +1,70 @@
+$firstColor: rgb(46, 46, 148);
+$secondColor: rgb(27, 27, 80);
+body {
+  background-color: $firstColor;
+
+  .black {
+    background-color: black !important;
+  }
+  .white {
+    background-color: white !important;
+  }
+  .red {
+    background-color: red !important;
+  }
+  .orange {
+    background-color: orange !important;
+  }
+  .yellow {
+    background-color: yellow !important;
+  }
+  .blue {
+    background-color: blue !important;
+  }
+  .wrap-game {
+    ul#codeSoluce {
+      background-color: transparent;
+    }
+    ul#board {
+      display: flex;
+      flex-direction: column-reverse;
+      li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        span {
+          &:first-child {
+            background-color: transparent;
+          }
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          margin: 0.2em;
+          background-color: $secondColor;
+          border-radius: 30px;
+          text-align: center;
+          line-height: 30px;
+          color: white;
+          &:nth-child(n + 6) {
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+    }
+    ul#colorOptions {
+      display: flex;
+      justify-content: center;
+      li {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin: 0.2em;
+        background-color: $secondColor;
+        border-radius: 30px;
+        text-align: center;
+      }
+    }
+  }
+}
