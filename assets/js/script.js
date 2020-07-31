@@ -28,6 +28,12 @@ let masterMind = {
   },
   drawGameBoard: function () {
     //display codeSoluce mistery
+    for (let i = 0; i < this.settings.columns; i++) {
+      let codeSoluce = document.createElement("li");
+      codeSoluce.innerText = "?";
+      codeSoluce.setAttribute("class", this.game.codeSoluce[i]); // don't forget to cut it !
+      this.elementsDom.codeSoluce.appendChild(codeSoluce);
+    }
 
     // display boardGame spot & indicators
     this.elementsDom.board.innerHTML = "";

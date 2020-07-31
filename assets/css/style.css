@@ -27,7 +27,23 @@ body .blue {
 }
 
 body .wrap-game ul#codeSoluce {
-  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1em;
+}
+
+body .wrap-game ul#codeSoluce li {
+  width: 30px;
+  height: 30px;
+  margin: 0.2em;
+  border-radius: 30px;
+  color: white;
+  text-align: center;
+  line-height: 30px;
 }
 
 body .wrap-game ul#board {
@@ -84,6 +100,7 @@ body .wrap-game ul#colorOptions {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 1em;
 }
 
 body .wrap-game ul#colorOptions li {

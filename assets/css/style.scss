@@ -23,7 +23,18 @@ body {
   }
   .wrap-game {
     ul#codeSoluce {
-      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      padding: 1em;
+      li {
+        width: 30px;
+        height: 30px;
+        margin: 0.2em;
+        border-radius: 30px;
+        color: white;
+        text-align: center;
+        line-height: 30px;
+      }
     }
     ul#board {
       display: flex;
@@ -56,6 +67,7 @@ body {
     ul#colorOptions {
       display: flex;
       justify-content: center;
+      padding: 1em;
       li {
         display: inline-block;
         width: 30px;
