@@ -1,4 +1,4 @@
-masterMind = {
+let masterMind = {
   colors: ["black", "white", "red", "orange", "yellow", "blue"],
   settings: {
     lines: 12,
@@ -11,23 +11,31 @@ masterMind = {
   },
   elementsDom: {
     codeSoluce: document.getElementById("codeSoluce"),
-
+    board: document.getElementById("board"),
     colorOptions: document.getElementById("colorOptions"),
   },
 
   initialise: function () {
+    this.codeSoluce();
     this.drawGameBoard();
   },
-
+  codeSoluce: function () {
+    for (let i = 0; i < this.settings.columns; i++) {
+      let randomColor = parseInt(Math.random() * this.colors.length);
+      this.game.codeSoluce[i] = this.colors[randomColor];
+    }
+    console.log(this.game.codeSoluce);
+  },
   drawGameBoard: function () {
-    let board = document.getElementById("board");
-    board.innerHTML = "";
+    //display codeSoluce mistery
+
     // display boardGame spot & indicators
+    this.elementsDom.board.innerHTML = "";
     for (let i = 0; i < this.settings.lines; i++) {
       let line = document.createElement("li");
       line.setAttribute("class", "line");
 
-      board.appendChild(line);
+      this.elementsDom.board.appendChild(line);
 
       lineId = document.createElement("span");
       lineId.innerText = i + 1;
@@ -45,20 +53,31 @@ masterMind = {
       }
     }
     // display list colors and add listener for each color
-    colorOptions = document.getElementById("colorOptions");
+
     for (let i = 0; i < masterMind.colors.length; i++) {
       let color = document.createElement("li");
+      color.setAttribute("id", this.colors[i]);
       color.setAttribute("class", "option " + this.colors[i]);
-      colorOptions.appendChild(color);
+      this.elementsDom.colorOptions.appendChild(color);
 
       color.addEventListener("click", this.insertColor);
     }
   },
-  insertColor: function (e) {
+  insertColor: function (color) {
     let currentLine = document.getElementsByClassName("line")[
       masterMind.game.line - 1
     ];
     let spots = currentLine.getElementsByClassName("spot");
-    spots[0].className = "black";
+    spots[0].className = color.target.id;
+    masterMind.game.codeEssais.push(color.target.id);
+    console.log(masterMind.game.codeEssais);
+    if (masterMind.game.codeEssais.length === masterMind.settings.columns) {
+      masterMind.codeCheck();
+      masterMind.game.line++;
+      masterMind.game.codeEssais = [];
+    }
+  },
+  codeCheck: function () {
+    console.log("je vérifie le code");
   },
 };
