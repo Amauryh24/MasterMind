@@ -20,6 +20,7 @@ let masterMind = {
     this.game.line = 1;
     this.codeSoluce();
     this.drawGameBoard();
+    this.showIntructions();
   },
   gameReset: function () {
     this.initialise();
@@ -194,5 +195,16 @@ let masterMind = {
       codeSoluce[0].innerText = "";
       codeSoluce[0].setAttribute("class", this.game.codeSoluce[i]);
     }
+  },
+  showIntructions: function () {
+    // let el = document.getElementById("instruction");
+    // el.addEventListener("mouseover", () => {
+    //   console.log("over");
+    //   el.innerText =
+    //     "instructions : Crack the combinaison with the colors and good position, you have feeback indicators width green for un good color in good place ";
+    // });
+    // el.addEventListener("mouseout", () => {
+    //   el.innerText = "Instructions";
+    // });
   },
 };

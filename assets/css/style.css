@@ -36,9 +36,45 @@ body .blue {
   background-color: #0396ff !important;
 }
 
+body .wrap-instructions .help {
+  cursor: help;
+  padding: 0.5em;
+  background-color: #50ab89;
+  display: inline-block;
+  -webkit-transform: rotate(1deg);
+          transform: rotate(1deg);
+  position: absolute;
+  top: 8%;
+  left: 47%;
+  -webkit-box-shadow: 3px 3px 10px #50ab89;
+          box-shadow: 3px 3px 10px #50ab89;
+}
+
+body .wrap-instructions p:hover .infobulle {
+  background-color: #3b3b5d;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-width: 480px;
+  margin: auto;
+  padding: 1em;
+  border: 2px solid white;
+  color: white;
+  font-size: 1em;
+  line-height: 1.2em;
+}
+
+body .wrap-instructions .infobulle {
+  display: none;
+}
+
 body .wrap-game {
   max-width: 500px;
   margin: auto;
+  padding-top: 1em;
 }
 
 body .wrap-game ul#codeSoluce {

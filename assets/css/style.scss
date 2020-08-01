@@ -31,10 +31,45 @@ body {
   .blue {
     background-color: #0396ff !important;
   }
-
+  .wrap-instructions {
+    // position: absolute;
+    // top: 6%;
+    // left: 58%;
+    // width: 50%;
+    .help {
+      cursor: help;
+      padding: 0.5em;
+      background-color: #50ab89;
+      display: inline-block;
+      transform: rotate(1deg);
+      position: absolute;
+      top: 8%;
+      left: 47%;
+      box-shadow: 3px 3px 10px #50ab89;
+    }
+    p:hover .infobulle {
+      background-color: $secondColor;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 480px;
+      margin: auto;
+      padding: 1em;
+      border: 2px solid white;
+      color: white;
+      font-size: 1em;
+      line-height: 1.2em;
+    }
+    .infobulle {
+      display: none;
+    }
+  }
   .wrap-game {
     max-width: 500px;
     margin: auto;
+    padding-top: 1em;
     ul#codeSoluce {
       display: flex;
       justify-content: center;
