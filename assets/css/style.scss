@@ -200,9 +200,14 @@ body {
       font-size: 1em;
       text-transform: uppercase;
       color: white;
+      box-shadow: 1px 1px 5px #2224237a;
       &:hover {
         cursor: pointer;
         background-color: $secondColor;
+        transform: scale(1.1);
+      }
+      &:active {
+        transform: scale(0.9);
       }
     }
     .restart {

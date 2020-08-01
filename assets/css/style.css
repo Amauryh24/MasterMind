@@ -250,11 +250,20 @@ body .wrap-option button {
   font-size: 1em;
   text-transform: uppercase;
   color: white;
+  -webkit-box-shadow: 1px 1px 5px #2224237a;
+          box-shadow: 1px 1px 5px #2224237a;
 }
 
 body .wrap-option button:hover {
   cursor: pointer;
   background-color: #3b3b5d;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+body .wrap-option button:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 body .wrap-option .restart {
