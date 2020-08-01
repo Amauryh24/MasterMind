@@ -133,12 +133,14 @@ body .wrap-game ul#colorOptions {
 
 body .wrap-game ul#colorOptions li {
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   margin: 0.2em;
   background-color: #3b3b5d;
   border-radius: 30px;
   text-align: center;
+  -webkit-box-shadow: 2px 2px 8px #0606067d;
+          box-shadow: 2px 2px 8px #0606067d;
 }
 
 body .wrap-game ul#colorOptions li:first-child {
@@ -148,6 +150,13 @@ body .wrap-game ul#colorOptions li:first-child {
 
 body .wrap-game ul#colorOptions li:hover {
   cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+body .wrap-game ul#colorOptions li:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 body .wrap-modal {
@@ -171,7 +180,7 @@ body .wrap-modal {
   border: 2px solid rgba(255, 255, 255, 0.514);
 }
 
-body .wrap-modal h2 {
+body .wrap-modal #modalMessage {
   font-size: 2em;
   line-height: 1.4em;
 }
@@ -188,5 +197,40 @@ body .wrap-modal button {
 body .wrap-modal button:hover {
   cursor: pointer;
   background-color: #29294a;
+}
+
+body .wrap-option {
+  max-width: 500px;
+  margin: auto;
+}
+
+body .wrap-option button {
+  display: inline-block;
+  width: 30%;
+  padding: 1em;
+  background-color: transparent;
+  border: 2px solid #3b3b5d;
+  border-radius: 30px;
+  font-size: 1em;
+  text-transform: uppercase;
+  color: white;
+}
+
+body .wrap-option button:hover {
+  cursor: pointer;
+  background-color: #3b3b5d;
+}
+
+body .wrap-option .restart {
+  display: block;
+  margin: 1em auto;
+}
+
+body .wrap-option .mode {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 /*# sourceMappingURL=style.css.map */

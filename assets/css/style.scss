@@ -102,14 +102,19 @@ body {
           background-size: 50%;
         }
         display: inline-block;
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         margin: 0.2em;
         background-color: $secondColor;
         border-radius: 30px;
         text-align: center;
+        box-shadow: 2px 2px 8px #0606067d;
         &:hover {
           cursor: pointer;
+          transform: scale(1.1);
+        }
+        &:active {
+          transform: scale(0.9);
         }
       }
     }
@@ -128,7 +133,7 @@ body {
     align-items: center;
     width: 50%;
     border: 2px solid rgba(255, 255, 255, 0.514);
-    h2 {
+    #modalMessage {
       font-size: 2em;
       line-height: 1.4em;
     }
@@ -143,6 +148,35 @@ body {
         cursor: pointer;
         background-color: $firstColor;
       }
+    }
+  }
+  .wrap-option {
+    // background-color: red;
+    max-width: 500px;
+    margin: auto;
+
+    button {
+      display: inline-block;
+      width: 30%;
+      padding: 1em;
+      background-color: transparent;
+      border: 2px solid $secondColor;
+      border-radius: 30px;
+      font-size: 1em;
+      text-transform: uppercase;
+      color: white;
+      &:hover {
+        cursor: pointer;
+        background-color: $secondColor;
+      }
+    }
+    .restart {
+      display: block;
+      margin: 1em auto;
+    }
+    .mode {
+      display: flex;
+      justify-content: space-around;
     }
   }
 }
