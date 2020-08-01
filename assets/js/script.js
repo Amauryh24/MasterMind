@@ -16,9 +16,13 @@ let masterMind = {
   },
 
   initialise: function () {
+    this.game.codeEssais = [];
+    this.game.line = 1;
     this.codeSoluce();
     this.drawGameBoard();
-    // this.codeRevelation();
+  },
+  gameReset: function () {
+    this.initialise();
   },
   codeSoluce: function () {
     for (let i = 0; i < this.settings.columns; i++) {
