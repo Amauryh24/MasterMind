@@ -125,6 +125,15 @@ body .wrap-game ul#colorOptions li {
   text-align: center;
 }
 
+body .wrap-game ul#colorOptions li:first-child {
+  background: url(../img/arrow-left-solid.svg) no-repeat 50%, #3b3b5d;
+  background-size: 50%;
+}
+
+body .wrap-game ul#colorOptions li:hover {
+  cursor: pointer;
+}
+
 body .wrap-modal {
   background-color: #3b3b5d;
   color: white;

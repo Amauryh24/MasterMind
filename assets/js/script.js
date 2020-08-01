@@ -29,6 +29,7 @@ let masterMind = {
   },
   drawGameBoard: function () {
     //display codeSoluce mistery
+    this.elementsDom.codeSoluce.innerHTML = "";
     for (let i = 0; i < this.settings.columns; i++) {
       let codeSoluce = document.createElement("li");
       codeSoluce.innerText = "?";
@@ -60,14 +61,16 @@ let masterMind = {
       }
     }
     // display list colors and add listener for each color
-
+    this.elementsDom.colorOptions.innerHTML = "";
+    let back = document.createElement("li");
+    this.elementsDom.colorOptions.appendChild(back);
     for (let i = 0; i < masterMind.colors.length; i++) {
       let color = document.createElement("li");
       color.setAttribute("id", this.colors[i]);
       color.setAttribute("class", "option " + this.colors[i]);
       this.elementsDom.colorOptions.appendChild(color);
-
       color.addEventListener("click", this.insertColor);
+      back.addEventListener("click", this.removeColor);
     }
   },
   insertColor: function (color) {
@@ -75,7 +78,7 @@ let masterMind = {
       masterMind.game.line - 1
     ];
     let spots = currentLine.getElementsByClassName("spot");
-    spots[0].className = color.target.id;
+    spots[0].className = "pop " + color.target.id;
     masterMind.game.codeEssais.push(color.target.id);
 
     // check code when line is completed
@@ -86,6 +89,17 @@ let masterMind = {
 
     if (masterMind.game.line === masterMind.settings.lines + 1) {
       masterMind.gameStatus("lose");
+    }
+  },
+  removeColor: function () {
+    let currentLine = document.getElementsByClassName("line")[
+      masterMind.game.line - 1
+    ];
+    let pops = currentLine.getElementsByClassName("pop");
+    if (masterMind.game.codeEssais.length === 0) return;
+    else {
+      pops[pops.length - 1].className = "spot";
+      masterMind.game.codeEssais.pop();
     }
   },
   codeCheck: function () {
@@ -119,7 +133,8 @@ let masterMind = {
   },
 
   gameStatus: function (status) {
-    this.codeRevelation();
+    this.gameOver();
+
     let modal = document.getElementById("modal");
     let message = document.getElementById("modalMessage");
     modal.style.display = "flex";
@@ -130,17 +145,28 @@ let masterMind = {
     }
     document.getElementById("yes").addEventListener("click", () => {
       modal.style.display = "none";
+      this.initialise();
     });
 
     document.getElementById("no").addEventListener("click", () => {
       modal.style.display = "none";
     });
   },
+  gameOver: function () {
+    this.codeRevelation();
+    let colorOptions = this.elementsDom.colorOptions.getElementsByClassName(
+      "option"
+    );
+    for (let i = 0; i < this.colors.length; i++) {
+      colorOptions[i].removeEventListener("click", this.insertColor);
+    }
+  },
   codeRevelation: function () {
     let codeSoluce = this.elementsDom.codeSoluce.getElementsByClassName(
       "soluce"
     );
     for (let i = 0; i < this.settings.columns; i++) {
+      codeSoluce[0].innerText = "";
       codeSoluce[0].setAttribute("class", this.game.codeSoluce[i]);
     }
   },

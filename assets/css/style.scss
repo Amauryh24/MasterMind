@@ -79,6 +79,11 @@ body {
       justify-content: center;
       padding: 1em;
       li {
+        &:first-child {
+          background: url(../img/arrow-left-solid.svg) no-repeat 50%,
+            $secondColor;
+          background-size: 50%;
+        }
         display: inline-block;
         width: 30px;
         height: 30px;
@@ -86,6 +91,9 @@ body {
         background-color: $secondColor;
         border-radius: 30px;
         text-align: center;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
