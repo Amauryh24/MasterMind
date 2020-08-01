@@ -36,14 +36,6 @@ body .blue {
   background-color: #0396ff !important;
 }
 
-body .hit {
-  background-color: #00ff0d !important;
-}
-
-body .almost {
-  background-color: #ffffff !important;
-}
-
 body .wrap-game {
   max-width: 500px;
   margin: auto;
@@ -112,9 +104,21 @@ body .wrap-game ul#board li span:first-child {
   background-color: transparent;
 }
 
-body .wrap-game ul#board li span:nth-child(n + 6) {
+body .wrap-game ul#board li .indicator {
   width: 10px;
   height: 10px;
+}
+
+body .wrap-game ul#board li .hit {
+  width: 10px;
+  height: 10px;
+  background-color: #00ff0d;
+}
+
+body .wrap-game ul#board li .almost {
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
 }
 
 body .wrap-game ul#colorOptions {

@@ -31,12 +31,7 @@ body {
   .blue {
     background-color: #0396ff !important;
   }
-  .hit {
-    background-color: #00ff0d !important;
-  }
-  .almost {
-    background-color: #ffffff !important;
-  }
+
   .wrap-game {
     max-width: 500px;
     margin: auto;
@@ -76,10 +71,23 @@ body {
           text-align: center;
           line-height: 30px;
           color: white;
-          &:nth-child(n + 6) {
-            width: 10px;
-            height: 10px;
-          }
+          // &:nth-child(n + 6) {
+
+          // }
+        }
+        .indicator {
+          width: 10px;
+          height: 10px;
+        }
+        .hit {
+          width: 10px;
+          height: 10px;
+          background-color: #00ff0d;
+        }
+        .almost {
+          width: 10px;
+          height: 10px;
+          background-color: #ffffff;
         }
       }
     }
