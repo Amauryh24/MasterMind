@@ -7,28 +7,28 @@ body {
   font-size: 16px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   .black {
-    background-color: black !important;
+    background-color: #252525 !important;
   }
   .white {
-    background-color: white !important;
+    background-color: #ece3e3 !important;
   }
   .red {
-    background-color: red !important;
+    background-color: #f12d2d !important;
   }
   .orange {
-    background-color: orange !important;
+    background-color: #ff9d0a !important;
   }
   .yellow {
-    background-color: yellow !important;
+    background-color: #fff77b !important;
   }
   .blue {
-    background-color: blue !important;
+    background-color: #0396ff !important;
   }
   .hit {
-    background-color: green !important;
+    background-color: #00ff0d !important;
   }
   .almost {
-    background-color: white !important;
+    background-color: #ffffff !important;
   }
   .wrap-game {
     ul#codeSoluce {
@@ -43,6 +43,7 @@ body {
         color: white;
         text-align: center;
         line-height: 30px;
+        background-color: $secondColor;
       }
     }
     ul#board {

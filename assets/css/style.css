@@ -6,35 +6,35 @@ body {
 }
 
 body .black {
-  background-color: black !important;
+  background-color: #252525 !important;
 }
 
 body .white {
-  background-color: white !important;
+  background-color: #ece3e3 !important;
 }
 
 body .red {
-  background-color: red !important;
+  background-color: #f12d2d !important;
 }
 
 body .orange {
-  background-color: orange !important;
+  background-color: #ff9d0a !important;
 }
 
 body .yellow {
-  background-color: yellow !important;
+  background-color: #fff77b !important;
 }
 
 body .blue {
-  background-color: blue !important;
+  background-color: #0396ff !important;
 }
 
 body .hit {
-  background-color: green !important;
+  background-color: #00ff0d !important;
 }
 
 body .almost {
-  background-color: white !important;
+  background-color: #ffffff !important;
 }
 
 body .wrap-game ul#codeSoluce {
@@ -55,6 +55,7 @@ body .wrap-game ul#codeSoluce li {
   color: white;
   text-align: center;
   line-height: 30px;
+  background-color: #3b3b5d;
 }
 
 body .wrap-game ul#board {

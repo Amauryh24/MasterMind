@@ -18,7 +18,7 @@ let masterMind = {
   initialise: function () {
     this.codeSoluce();
     this.drawGameBoard();
-    this.codeRevelation();
+    // this.codeRevelation();
   },
   codeSoluce: function () {
     for (let i = 0; i < this.settings.columns; i++) {
