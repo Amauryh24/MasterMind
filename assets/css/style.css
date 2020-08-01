@@ -5,6 +5,13 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+body h1 {
+  font-size: 2em;
+  text-align: center;
+  padding: 1em;
+  color: white;
+}
+
 body .black {
   background-color: #252525 !important;
 }
@@ -35,6 +42,11 @@ body .hit {
 
 body .almost {
   background-color: #ffffff !important;
+}
+
+body .wrap-game {
+  max-width: 500px;
+  margin: auto;
 }
 
 body .wrap-game ul#codeSoluce {

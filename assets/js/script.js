@@ -24,6 +24,27 @@ let masterMind = {
   gameReset: function () {
     this.initialise();
   },
+
+  gameMode: function (mode) {
+    switch (mode) {
+      case "easy":
+        this.settings.columns = 4;
+        this.initialise();
+        break;
+      case "medium":
+        this.settings.columns = 5;
+        this.initialise();
+        break;
+      case "difficult":
+        this.settings.columns = 6;
+        this.initialise();
+        break;
+
+      default:
+        this.initialise();
+        break;
+    }
+  },
   codeSoluce: function () {
     for (let i = 0; i < this.settings.columns; i++) {
       let randomColor = parseInt(Math.random() * this.colors.length);
