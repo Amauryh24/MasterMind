@@ -10,7 +10,7 @@ let masterMind = {
   },
   game: {
     line: 1,
-    codeSoluce: ["black", "blue", "blue", "red"],
+    codeSoluce: [],
     codeEssais: [],
   },
   elementsDom: {
@@ -22,7 +22,7 @@ let masterMind = {
   initialise: function () {
     this.game.codeEssais = [];
     this.game.line = 1;
-    // this.codeSoluce();
+    this.codeSoluce();
     this.drawGameBoard();
   },
   gameReset: function () {
@@ -30,6 +30,9 @@ let masterMind = {
   },
 
   gameMode: function (mode) {
+    if (this.codeCheck()) {
+      return;
+    }
     switch (mode) {
       case "easy":
         this.settings.columns = 4;
