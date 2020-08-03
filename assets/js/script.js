@@ -20,6 +20,7 @@ let masterMind = {
   },
 
   initialise: function () {
+    this.game.codeSoluce = [];
     this.game.codeEssais = [];
     this.game.line = 1;
     this.codeSoluce();
