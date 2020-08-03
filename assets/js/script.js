@@ -1,3 +1,7 @@
+// errors :
+//solution : black, blue,blue, red   => try : orange, red, red, blue
+// indicator : 3 white indicators but two only expected
+
 let masterMind = {
   colors: ["black", "white", "red", "orange", "yellow", "blue"],
   settings: {
@@ -6,7 +10,7 @@ let masterMind = {
   },
   game: {
     line: 1,
-    codeSoluce: [],
+    codeSoluce: ["black", "blue", "blue", "red"],
     codeEssais: [],
   },
   elementsDom: {
@@ -18,9 +22,8 @@ let masterMind = {
   initialise: function () {
     this.game.codeEssais = [];
     this.game.line = 1;
-    this.codeSoluce();
+    // this.codeSoluce();
     this.drawGameBoard();
-    this.showIntructions();
   },
   gameReset: function () {
     this.initialise();
@@ -89,6 +92,7 @@ let masterMind = {
     // display list colors and add listener for each color
     this.elementsDom.colorOptions.innerHTML = "";
     let back = document.createElement("li");
+    back.setAttribute("id", "back");
     this.elementsDom.colorOptions.appendChild(back);
     for (let i = 0; i < masterMind.colors.length; i++) {
       let color = document.createElement("li");
@@ -134,8 +138,9 @@ let masterMind = {
     // check good color in good place
     for (let i = 0; i < this.settings.columns; i++) {
       if (this.game.codeSoluce[i] === this.game.codeEssais[i]) {
-        this.game.codeEssais[i] = "hit";
         this.insertIndicators("hit");
+        this.game.codeEssais[i] = "hit";
+
         codeSoluceCopy[i] = -1;
       } else {
         codeMatch = false;
@@ -143,8 +148,10 @@ let masterMind = {
     }
     // check good color but no good place
     for (let i = 0; i < this.settings.columns; i++) {
-      if (codeSoluceCopy.indexOf(this.game.codeEssais[i]) !== -1)
+      if (codeSoluceCopy.indexOf(this.game.codeEssais[i]) !== -1) {
         this.insertIndicators("almost");
+        codeSoluceCopy[codeSoluceCopy.indexOf(this.game.codeEssais[i])] = 0;
+      }
     }
     masterMind.game.codeEssais = [];
 
@@ -186,6 +193,8 @@ let masterMind = {
     for (let i = 0; i < this.colors.length; i++) {
       colorOptions[i].removeEventListener("click", this.insertColor);
     }
+    let back = document.getElementById("back");
+    back.removeEventListener("click", this.removeColor);
   },
   codeRevelation: function () {
     let codeSoluce = this.elementsDom.codeSoluce.getElementsByClassName(
@@ -195,16 +204,5 @@ let masterMind = {
       codeSoluce[0].innerText = "";
       codeSoluce[0].setAttribute("class", this.game.codeSoluce[i]);
     }
-  },
-  showIntructions: function () {
-    // let el = document.getElementById("instruction");
-    // el.addEventListener("mouseover", () => {
-    //   console.log("over");
-    //   el.innerText =
-    //     "instructions : Crack the combinaison with the colors and good position, you have feeback indicators width green for un good color in good place ";
-    // });
-    // el.addEventListener("mouseout", () => {
-    //   el.innerText = "Instructions";
-    // });
   },
 };

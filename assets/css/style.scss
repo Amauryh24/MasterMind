@@ -57,7 +57,8 @@ body {
       max-width: 480px;
       margin: auto;
       padding: 1em;
-      border: 2px solid white;
+      border: 3px solid rgba(255, 255, 255, 0.514);
+
       color: white;
       font-size: 1em;
       line-height: 1.2em;
@@ -166,21 +167,23 @@ body {
     display: none;
     flex-direction: column;
     align-items: center;
-    width: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.514);
+    width: 60%;
+    border: 3px solid rgba(255, 255, 255, 0.514);
     #modalMessage {
       font-size: 2em;
       line-height: 1.4em;
+      text-align: center;
     }
     button {
-      width: 200px;
+      width: 50%;
       margin: 1em auto;
       padding: 1em;
-      background-color: transparent;
+      background-color: white;
+      box-shadow: 3px 3px 10px black;
       border: 5px solid $firstColor;
       font-size: 1em;
+      cursor: pointer;
       &:hover {
-        cursor: pointer;
         background-color: $firstColor;
       }
     }
