@@ -31,9 +31,6 @@ let masterMind = {
   },
 
   gameMode: function (mode) {
-    if (this.codeCheck()) {
-      return;
-    }
     switch (mode) {
       case "easy":
         this.settings.columns = 4;
@@ -58,7 +55,6 @@ let masterMind = {
       let randomColor = parseInt(Math.random() * this.colors.length);
       this.game.codeSoluce[i] = this.colors[randomColor];
     }
-    console.log(this.game.codeSoluce);
   },
   drawGameBoard: function () {
     //display codeSoluce mistery
@@ -172,14 +168,12 @@ let masterMind = {
   gameStatus: function (status) {
     this.gameOver();
 
-    let modal = document.getElementById("modal");
+    document.getElementById("modal").style.display = "flex";
     let message = document.getElementById("modalMessage");
-    modal.style.display = "flex";
-    if (status === "win") {
-      message.innerText = "You craked the Code !";
-    } else {
-      message.innerText = "You lose";
-    }
+
+    if (status === "win") message.innerText = "You craked the Code !";
+    else message.innerText = "You lose";
+
     document.getElementById("yes").addEventListener("click", () => {
       modal.style.display = "none";
       this.initialise();
