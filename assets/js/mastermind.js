@@ -1,7 +1,3 @@
-// errors :
-//solution : black, blue,blue, red   => try : orange, red, red, blue
-// indicator : 3 white indicators but two only expected
-
 let masterMind = {
   colors: ["black", "white", "red", "orange", "yellow", "blue"],
   settings: {
